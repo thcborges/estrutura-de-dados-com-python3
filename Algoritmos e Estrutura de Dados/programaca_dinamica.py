@@ -1,7 +1,7 @@
 from _datetime import datetime
 
 
-N = 100
+N = 50
 mem = [-1 for i in range(N)]
 mem[0] = mem[1] = 1
 
