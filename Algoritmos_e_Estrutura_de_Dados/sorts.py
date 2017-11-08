@@ -13,65 +13,69 @@ if __name__ == '__main__':
 
     faster = []
     n = 10000
+    inicio = datetime.datetime.now()
     for i in range(1000):
-        list = gera_lista(n)
+        inic = datetime.datetime.now()
+        lista = gera_lista(n)
+        print('gerando lista: ', datetime.datetime.now() - inic)
+        print()
         dic = {}
 
-        v = list[:]
+        v = lista[:]
         ini = datetime.datetime.now()
         insertion_sort.insertion_sort(v)
         fim = datetime.datetime.now()
         dic[fim - ini] = 'insertion'
 
-        v = list[:]
+        v = lista[:]
         ini = datetime.datetime.now()
         selection_sort.selection_sort(v)
         fim = datetime.datetime.now()
         dic[fim - ini] = 'selection'
 
-        v = list[:]
+        v = lista[:]
         ini = datetime.datetime.now()
         quick_sort.quick_sort(v, 0, len(v) - 1)
         fim = datetime.datetime.now()
         dic[fim - ini] = 'quick'
 
-        v = list[:]
+        v = lista[:]
         ini = datetime.datetime.now()
         bubble_sort.bubble_sort(v)
         fim = datetime.datetime.now()
         dic[fim - ini] = 'bubble'
 
-        v = np.array(list[:])
+        v = np.array(lista[:])
         ini = datetime.datetime.now()
         bubble_sort.bubble_sort(v)
         fim = datetime.datetime.now()
         dic[fim - ini] = 'np_bubble'
 
-        v = np.array(list[:])
+        v = np.array(lista[:])
         ini = datetime.datetime.now()
         insertion_sort.insertion_sort(v)
         fim = datetime.datetime.now()
         dic[fim - ini] = 'np_insertion'
 
-        v = np.array(list[:])
+        v = np.array(lista[:])
         ini = datetime.datetime.now()
         selection_sort.selection_sort(v)
         fim = datetime.datetime.now()
         dic[fim - ini] = 'np_selection'
 
-        v = np.array(list[:])
+        v = np.array(lista[:])
         ini = datetime.datetime.now()
         quick_sort.quick_sort(v, 0, len(v) - 1)
         fim = datetime.datetime.now()
         dic[fim - ini] = 'np_quick'
 
-        v = np.array(list[:])
+        v = np.array(lista[:])
         ini = datetime.datetime.now()
         v.sort()
         fim = datetime.datetime.now()
         dic[fim - ini] = 'np_tim'
 
-        v = list[:]
+        v = lista[:]
         ini = datetime.datetime.now()
         v.sort()
         fim = datetime.datetime.now()
@@ -82,5 +86,5 @@ if __name__ == '__main__':
         for chave, valor in sorted(dic.items()):
             print('{:>13}: {}'.format(valor, chave))
 
-        print('\n================================================\n')
+        print('\n=======================', i, '=>', datetime.datetime.now() - inicio, '=========================\n')
     print(faster)
