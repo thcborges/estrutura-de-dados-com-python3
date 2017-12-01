@@ -7,7 +7,7 @@ class MinHeap:
         self._queue = []
         self._index = 0
 
-    def insert(self, item, priority):
+    def insert(self, item: object, priority: object) -> object:
         heapq.heappush(self._queue, (-priority, self._index, item))
         self._index += 1
 

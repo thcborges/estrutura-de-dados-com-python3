@@ -14,7 +14,7 @@ class HashTable:
     def hash_func(self, key):
         return key % self.table_size
 
-    def insert(self, key):
+    def insert(self, key: object) -> object:
         self.table[self.hash_func(key)].append(key)
 
     def show(self):

@@ -9,7 +9,7 @@ class BinarySearchTree:
     def __init__(self):
         self.root = None
 
-    def insert(self, label):
+    def insert(self, label: object) -> object:
         # cria um novo nó
         node = Node(label)
         # verifica se a árvore está vazia
